@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
 	<title>@yield('title')</title>
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
