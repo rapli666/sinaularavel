@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Siswa;
+
 class SiswaController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        return "ini adalah index";
+        $siswa = Siswa::all();
+        return view('siswa', ['siswa' => $siswa]);
         //untuk menampilkan view data
     }
 
@@ -24,7 +27,10 @@ class SiswaController extends Controller
      */
     public function create()
     {
+        $siswa = Siswa::all();
         //
+        return view('nambahsiswa', compact(['siswa']));
+
     }
 
     /**
@@ -35,7 +41,17 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'umur' => 'required'
+        ]);
+
+        Siswa::create([
+            'nama' => $request->nama,
+            'umur' => $request->umur
+        ]);
+
+        return redirect( '/siswa' );
     }
 
     /**
@@ -44,9 +60,9 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Siswa $p)
     {
-        //
+        return view('siswa', compact(['p']));
     }
 
     /**
