@@ -12,6 +12,9 @@
       <li class="nav-item">
         <a class="nav-link navs" href="/about">About</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link navs" href="/siswa">Siswa</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle navs" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown

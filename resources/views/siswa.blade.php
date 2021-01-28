@@ -26,6 +26,12 @@
 						<td>{{ $p-> nama }}</td>
 						<td class="text-center">{{ $p-> umur }}</td>
 						<td class="text-center">
+							<a href="{{route('siswa.edit', $p->id)}}" class="btn btn-warning">Edit</a>
+							<form method="post" action="{{ route('siswa.hapus', $p->id) }}" class="d-inline">
+								@csrf
+								@method('DELETE')
+								<button class="btn btn-danger" type="submit"> Delete</button>
+							</form>
 						
 
 							
