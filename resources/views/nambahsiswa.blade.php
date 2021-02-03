@@ -18,11 +18,25 @@
 			  <div class="form-group">
 			    <label>Nama</label>
 			    <input type="text" class="form-control" placeholder="Masukkan Nama" name="nama">
+
+			    @if($errors->has('nama'))
+			    <div class="small text-danger">
+			    	{{ $errors->first('nama')}}
+			    </div>
+			    @endif
+
 			  </div>
 			  <div class="form-group">
 			    <label>Umur</label>
 			    <input type="number" class="form-control" placeholder="Masukkan Umur" name="umur">
 			  </div>
+
+			   @if($errors->has('umur'))
+			    <div class="small text-danger">
+			    	{{ $errors->first('umur')}}
+			    </div>
+			    @endif
+
 			  <input type="submit" value="Simpan" class="btn btn-primary">
 			  <a href="{{url('/siswa')}}" class="btn btn-primary ">Kembali</a>
 			  </form>

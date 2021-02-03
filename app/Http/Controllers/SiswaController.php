@@ -41,10 +41,16 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
+        //validasi
+        $messages = [
+            'required' => 'Field tidak boleh kosong!',
+            'min' => 'Masukan setidaknya 3 karakter'
+        ];
+
         $this->validate($request, [
             'nama' => 'required',
             'umur' => 'required'
-        ]);
+        ],$messages);
 
         Siswa::create([
             'nama' => $request->nama,
@@ -87,10 +93,16 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //validasi
+         $messages = [
+            'required' => 'Field tidak boleh kosong!',
+            'min' => 'Masukan setidaknya 3 karakter'
+        ];
+
         $this->validate($request, [
             'nama' => 'required',
             'umur' => 'required'
-        ]);
+        ],$messages);
 
         $input = $request->all();
         $siswa = Siswa::findOrFail($id);

@@ -20,6 +20,13 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <input type="text" name="nama" placeholder="Enter Name" class="form-control" value="{{ $siswa->nama }}">
+
+                          @if($errors->has('nama'))
+                <div class="small text-danger">
+                    {{ $errors->first('nama')}}
+                </div>
+                @endif
+
                     </div>
                 </div>
                 <div class="row form-group">
@@ -28,6 +35,13 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <input type="number" class="form-control" name="umur" value="{{ $siswa->umur }}">
+
+                         @if($errors->has('umur'))
+                <div class="small text-danger">
+                    {{ $errors->first('umur')}}
+                </div>
+                @endif
+                
                     </div>
                 </div>
                 <div class="card-footer text-right">
